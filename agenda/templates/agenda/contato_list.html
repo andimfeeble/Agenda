@@ -1,0 +1,17 @@
+{% extends 'agenda/base.html' %}
+
+{% block title %}Agenda{% endblock title %}
+
+{% block content %}
+    {% for contato in contato_list %}
+        <article>
+            <h2>
+                <a href="{{ contato.get_absolute_url }}">
+                    {{ contato.nome }}
+                </a>
+            </h2>
+            <p>{{ contato.fone }}</p>
+            <p>{{ contato.email }}</p>
+        </article>
+    {% endfor %}
+{% endblock content %}
